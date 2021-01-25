@@ -102,3 +102,16 @@ The following JVM setting is also required when importing the API in API Manage
 ## Configure API Manager in a multi-datacenter environment
 
 For details on configuring API Manager for a large amount of APIs and data in a multi-datacenter environment, see [Configure API Management in multiple datacenters](/docs/apimgmt_multi_dc/).
+
+## Configure an API Manager request rate limiter
+
+A request rate limiter monitors the number of requests an individual user makes to API Manager during an active session. If the number of user requests in an individual session exceeds the set boundries, that user will be automatically logged out and will need to login again to continue using API Manager.
+
+To configure a request rate limiter, perform the following steps in Policy Studio:
+
+1. Open the configuration of your API Manager-enabled API Gateway instance. For example, select **File > New Project from an API Gateway instance**.
+2. Navigate to **Environment Configuration > Listeners > API Gateway > API Portal > Paths** in the Policy Studio tree.
+3. Update the servlet to `API Portal v1.4 ('v1.4')`.
+   * Edit the property `jersey.config.server.provider.classnames`. In the **Value** field add the class name `com.vordel.apiportal.api.filter.RateLimitBindingFeature` to the existing comma-separated list of class names.
+   * Add a new property. In the **Name** field enter the name `RateLimitFilter.rateLimitSize` and in the **Value** field enter the number of requests a user can make in a set period of time.
+   * Add a new property. In the **Name** field enter the name `RateLimitFilter.rateLimitOffset` and in the **Value** field enter the amount of time in miliseconds the request rate limiter should allow between the user's most recent request and their Nth request (as set in `RateLimitFilter.rateLimitSize`).
