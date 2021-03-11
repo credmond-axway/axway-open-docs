@@ -13,9 +13,7 @@
 
 ## Enable API Manager
 
-{{< alert title="Note" color="primary" >}}If you installed API Manager using the **Complete** setup type, or installed API Manager and the Quick Start tutorial as part of a **Custom** setup type, API Manager is enabled by default, and you can skip to the next section. {{< /alert >}}
-
-To enable API Manager, perform the following steps:
+{{< alert title="Note" color="primary" >}}To enable API Manager, perform the following steps:
 
 1. Open Policy Studio and open or create a new project.
 2. Select **File > Configure API Manager**.
@@ -102,7 +100,7 @@ For details on configuring API Manager for a large amount of APIs and data in a 
 
 Rate limit monitors the number of requests that a user can send to API Manager during an active session. If the number of requests in an individual session exceeds the configured boundaries, the session is terminated, and the user must log in again to continue using API Manager.
 
-To configure the request rate limiter for your user' sessions in API Manager, perform the following steps in Policy Studio:
+To configure the request rate limiter for your user's sessions in API Manager, perform the following steps in Policy Studio:
 
 1. Select **Environment Configuration > Listeners > API Gateway > API Portal > Paths** in the Policy Studio tree.
 2. Double-click the `API Portal v1.4 ('v1.4')` servlet to open its dialog box.
