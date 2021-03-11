@@ -109,9 +109,11 @@ To configure the request rate limiter for your user' sessions in API Manager, pe
 3. On the servlet dialog box, click to **Edit** the `jersey.config.server.provider.classnames` property.
 4. Add `com.vordel.apiportal.api.filter.RateLimitBindingFeature` to the existing comma-separated list of class names.
 5. Click to **Add** two new properties to the **Servlet Properties** list :
-    * **Name**: `RateLimitFilter.rateLimitSize`. **Value**: Enter the number of requests a user can make in a period of time. Defaults to `200`.
-    * **Name**: `RateLimitFilter.rateLimitOffset`. **Value**: Enter the amount of time, in milliseconds, that the request rate limiter should allow between the user’s most recent request and the configured number of requests. Defaults to `60000` milliseconds (`1` minute).
+
+   * **Name**: `RateLimitFilter.rateLimitSize`. **Value**: Enter the number of requests a user can make in a period of time. Defaults to `200`.
+   * **Name**: `RateLimitFilter.rateLimitOffset`. **Value**: Enter the amount of time, in milliseconds, that the request rate limiter should allow between the user’s most recent request and the configured number of requests. Defaults to `60000` milliseconds (`1` minute).
 6. Click **OK**.
 
 {{< alert title="Note" color="primary" >}}A user login to API Manager generates multiple requests. Therefore, it is recommended to set `RateLimitFilter.rateLimitSize` to higher than `50` at a minimum.
-{{< /alert >}}
+
+Customers with a large number of entities will also generate large volumes of API Manager requests and should therefore consider increasing the default value for `RateLimitFilter.rateLimitSize.`{{< /alert >}}
