@@ -13,7 +13,7 @@
 
 ## Enable API Manager
 
-{{< alert title="Note" color="primary" >}}To enable API Manager, perform the following steps:
+To enable API Manager, perform the following steps:
 
 1. Open Policy Studio and open or create a new project.
 2. Select **File > Configure API Manager**.
@@ -30,7 +30,7 @@
 7. After deployment completes, enter the following URL in your browser to log in to apimanager: `https://HOSTNAME:8075`
 8. Log in using the API administrator credentials that you specified when installing API Manager, or when configuring API Manager in Policy Studio. For security reasons, you must change the default credentials.
 
-{{< alert title="Note" color="primary" >}}In earlier versions, API Manager was configured using the `setup-apimanager` script in the `INSTALL_DIR/apigateway/posix/bin` directory. This script is still supported for backwards compatibility, but it is best to use Policy Studio to configure API Manager in this version. Cassandra must be installed and running before you run the `setup-apimanager` script. For more details, run the script with the `--help` option. {{< /alert >}}
+{{< alert title="Note" color="primary" >}}In earlier versions, API Manager was configured using the `setup-apimanager` script in the `INSTALL_DIR/apigateway/posix/bin` directory. This script is still supported for backwards compatibility, but we recommend you to use Policy Studio to configure API Manager in this version. Cassandra must be installed and running before you run the `setup-apimanager` script. For more details, run the script with the `--help` option. {{< /alert >}}
 
 ## Configure signed certificates for API Manager ports
 
@@ -114,4 +114,5 @@ To configure the request rate limiter for your user's sessions in API Manager, p
 
 {{< alert title="Note" color="primary" >}}A user login to API Manager generates multiple requests. Therefore, it is recommended to set `RateLimitFilter.rateLimitSize` to higher than `50` at a minimum.
 
-Customers with a large number of entities will also generate large volumes of API Manager requests and should therefore consider increasing the default value for `RateLimitFilter.rateLimitSize.`{{< /alert >}}
+Customers with a large number of entities will also generate large volumes of API Manager requests and should, therefore, consider increasing the default value for `RateLimitFilter.rateLimitSize.`
+{{< /alert >}}
