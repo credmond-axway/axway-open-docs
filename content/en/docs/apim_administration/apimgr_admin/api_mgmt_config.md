@@ -13,6 +13,8 @@
 
 ## Enable API Manager
 
+{{< alert title="Note" color="primary" >}}If you installed API Manager using the **Complete** setup type, or installed API Manager and the Quick Start tutorial as part of a **Custom** setup type, API Manager is enabled by default, and you can skip to the next section. {{< /alert >}}
+
 To enable API Manager, perform the following steps:
 
 1. Open Policy Studio and open or create a new project.
